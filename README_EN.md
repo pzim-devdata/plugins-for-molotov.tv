@@ -8,11 +8,21 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Firefox-Tampermonkey-orange?logo=firefox&logoColor=white" alt="Firefox"/>
-  <img src="https://img.shields.io/badge/Chrome-Tampermonkey-4285F4?logo=googlechrome&logoColor=white" alt="Chrome"/>
-  <img src="https://img.shields.io/badge/Edge-Tampermonkey-0078D4?logo=microsoftedge&logoColor=white" alt="Edge"/>
-  <img src="https://img.shields.io/badge/Safari-Tampermonkey-000000?logo=safari&logoColor=white" alt="Safari"/>
-  <img src="https://img.shields.io/badge/Opera-Tampermonkey-FF1B2D?logo=opera&logoColor=white" alt="Opera"/>
+  <a href="https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/">
+    <img src="https://img.shields.io/badge/Firefox-Tampermonkey-orange?logo=firefox&logoColor=white" alt="Firefox"/>
+  </a>
+  <a href="https://chromewebstore.google.com/detail/dhdgffkkebhmkfjojejmpbldmpobfkfo">
+    <img src="https://img.shields.io/badge/Chrome-Tampermonkey-4285F4?logo=googlechrome&logoColor=white" alt="Chrome"/>
+  </a>
+  <a href="https://microsoftedge.microsoft.com/addons/detail/iikmkjmpaadaobahmlepeloendndfphd">
+    <img src="https://img.shields.io/badge/Edge-Tampermonkey-0078D4?logo=microsoftedge&logoColor=white" alt="Edge"/>
+  </a>
+  <a href="https://apps.apple.com/app/tampermonkey/id6738342400">
+    <img src="https://img.shields.io/badge/Safari-Tampermonkey-000000?logo=safari&logoColor=white" alt="Safari"/>
+  </a>
+  <a href="https://addons.opera.com/en/extensions/details/tampermonkey-beta/">
+    <img src="https://img.shields.io/badge/Opera-Tampermonkey-FF1B2D?logo=opera&logoColor=white" alt="Opera"/>
+  </a>
   <br/>
   <img src="https://img.shields.io/github/commit-activity/t/pzim-devdata/plugins-for-molotov.tv" alt="Commits"/>
   <img src="https://img.shields.io/github/issues/pzim-devdata/plugins-for-molotov.tv" alt="Issues"/>
@@ -24,16 +34,16 @@
 
 ---
 
-## 📁 Repository contents
+## 🎯 Description
 
-| File | Description |
-|---|---|
-| [`Molotov - Auto clic "Regarder la télé".user.js`](Molotov%20-%20Auto%20clic%20%22Regarder%20la%20t%C3%A9l%C3%A9%22.user.js) | Tampermonkey script — auto-click "Watch TV" button |
-| [`Molotov - Auto fermeture onglet chaînes.user.js`](Molotov%20-%20Auto%20fermeture%20onglet%20cha%C3%AEnes.user.js) | Tampermonkey script — auto-close channels panel |
-| [`Auto clic "Regarder la télé".gif`](Auto%20clic%20%22Regarder%20la%20t%C3%A9l%C3%A9%22.gif) | Demo of the auto-click plugin |
-| [`Auto fermeture onglet chaînes.gif`](Auto%20fermeture%20onglet%20cha%C3%AEnes.gif) | Demo of the auto-close plugin |
-| [`molotov-banniere.png`](molotov-banniere.png) | Project banner |
-| [`LICENSE`](LICENSE) | MIT License |
+**plugins-for-molotov.tv** is a collection of [Tampermonkey](https://www.tampermonkey.net/) scripts to improve the user experience on [app.molotov.tv](https://app.molotov.tv).
+
+Molotov.tv is a French television streaming service accessible from the browser. These plugins automate repetitive actions and fix known interface bugs:
+
+- 🖱️ **Auto click "Watch TV"** — removes the mandatory welcome step every time you open Molotov by automatically clicking the player launch button
+- 📺 **Auto close channels panel** — fixes the bug where clicking on a channel does nothing, by forcing the channel list to reload every 45 seconds
+
+These scripts work on all Tampermonkey-compatible browsers: Firefox, Chrome, Edge, Safari and Opera.
 
 ---
 
