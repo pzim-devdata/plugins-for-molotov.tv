@@ -12,38 +12,38 @@
   <img src="https://img.shields.io/badge/Chrome-Tampermonkey-4285F4?logo=googlechrome&logoColor=white" alt="Chrome"/>
   <img src="https://img.shields.io/github/commit-activity/t/pzim-devdata/plugins-for-molotov.tv" alt="Commits"/>
   <img src="https://img.shields.io/github/issues/pzim-devdata/plugins-for-molotov.tv" alt="Issues"/>
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=pzim-devdata.plugins-for-molotov.tv" alt="Visiteurs"/>
-  <img src="https://img.shields.io/github/license/pzim-devdata/plugins-for-molotov.tv" alt="Licence MIT"/>
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=pzim-devdata.plugins-for-molotov.tv" alt="Visitors"/>
+  <img src="https://img.shields.io/github/license/pzim-devdata/plugins-for-molotov.tv" alt="MIT License"/>
 </p>
 
-> ⚠️ **Ce projet est indépendant et n'est pas affilié, associé, autorisé, ni officiellement lié à Molotov.tv ou à ses sociétés mères.**
+> ⚠️ **This project is independent and is not affiliated with, associated with, authorized by, or officially connected to Molotov.tv or its parent companies.**
 
 ---
 
-## 📋 Table des matières
+## 📋 Table of Contents
 
-- [Prérequis — Installer Tampermonkey](#-prérequis--installer-tampermonkey)
-- [Plugin 1 — Auto clic "Regarder la télé"](#-plugin-1--auto-clic-regarder-la-télé)
-- [Plugin 2 — Auto fermeture onglet chaînes](#-plugin-2--auto-fermeture-onglet-chaînes)
-- [Installation pas à pas](#-installation-pas-à-pas)
-- [Licence](#-licence)
+- [Prerequisites — Install Tampermonkey](#-prerequisites--install-tampermonkey)
+- [Plugin 1 — Auto click "Watch TV"](#%EF%B8%8F-plugin-1--auto-click-watch-tv)
+- [Plugin 2 — Auto close channels panel](#-plugin-2--auto-close-channels-panel)
+- [Step-by-step installation](#-step-by-step-installation)
+- [License](#-license)
 
 ---
 
-## 🔧 Prérequis — Installer Tampermonkey
+## 🔧 Prerequisites — Install Tampermonkey
 
-Ces plugins nécessitent l'extension **Tampermonkey** sur votre navigateur.
+These plugins require the **Tampermonkey** browser extension.
 
 <table>
   <tr>
     <td align="center" width="50%">
-      <a href="https://addons.mozilla.org/fr/firefox/addon/tampermonkey/">
-        <img src="https://img.shields.io/badge/Firefox-Installer_Tampermonkey-FF7139?style=for-the-badge&logo=firefox-browser&logoColor=white" alt="Tampermonkey Firefox"/>
+      <a href="https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/">
+        <img src="https://img.shields.io/badge/Firefox-Install_Tampermonkey-FF7139?style=for-the-badge&logo=firefox-browser&logoColor=white" alt="Tampermonkey Firefox"/>
       </a>
     </td>
     <td align="center" width="50%">
       <a href="https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo">
-        <img src="https://img.shields.io/badge/Chrome-Installer_Tampermonkey-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Tampermonkey Chrome"/>
+        <img src="https://img.shields.io/badge/Chrome-Install_Tampermonkey-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Tampermonkey Chrome"/>
       </a>
     </td>
   </tr>
@@ -51,23 +51,23 @@ Ces plugins nécessitent l'extension **Tampermonkey** sur votre navigateur.
 
 ---
 
-## 🖱️ Plugin 1 — Auto clic "Regarder la télé"
+## 🖱️ Plugin 1 — Auto click "Watch TV"
 
 ### Description
 
-Quand vous ouvrez [app.molotov.tv](https://app.molotov.tv), un bouton **"Regarder la télé"** s'affiche sur la page d'accueil. Ce plugin clique automatiquement dessus **une seule fois par session**, vous amenant directement au lecteur sans action manuelle.
+When you open [app.molotov.tv](https://app.molotov.tv), a **"Watch TV"** button appears on the home page. This plugin automatically clicks it **once per session**, taking you directly to the player without any manual action.
 
-### ⬇️ Télécharger / Installer directement
+### ⬇️ Download / Install directly
 
-**URL du script** (pour import direct dans Tampermonkey) :
+**Script URL** (for direct import into Tampermonkey):
 ```
 https://raw.githubusercontent.com/pzim-devdata/plugins-for-molotov.tv/main/Molotov%20-%20Auto%20clic%20%22Regarder%20la%20t%C3%A9l%C3%A9%22.user.js
 ```
 
-### 📄 Code source
+### 📄 Source code
 
 <details>
-<summary>Cliquer pour afficher le script complet</summary>
+<summary>Click to show the full script</summary>
 
 ```javascript
 // ==UserScript==
@@ -151,12 +151,8 @@ https://raw.githubusercontent.com/pzim-devdata/plugins-for-molotov.tv/main/Molot
             log('Clic déjà effectué pendant cette session, aucune action');
             return;
         }
-
         cliquerBouton((succes) => {
-            if (succes) {
-                log('Action terminée avec succès');
-                return;
-            }
+            if (succes) { log('Action terminée avec succès'); return; }
             if (tentative < CONFIG.max_tentatives) {
                 log(`Tentative ${tentative + 1}/${CONFIG.max_tentatives}...`);
                 setTimeout(() => essayerClic(tentative + 1), CONFIG.intervalle_tentatives);
@@ -185,28 +181,28 @@ https://raw.githubusercontent.com/pzim-devdata/plugins-for-molotov.tv/main/Molot
 
 ---
 
-## 📺 Plugin 2 — Auto fermeture onglet chaînes
+## 📺 Plugin 2 — Auto close channels panel
 
 ### Description
 
-Sur Molotov, l'onglet latéral **"Chaînes en direct"** peut rester ouvert et provoquer un bug connu : **cliquer sur une chaîne ne fait rien**. Ce plugin ferme automatiquement cet onglet **45 secondes après son ouverture**, ce qui force le rechargement de la liste des chaînes et évite ce bug.
+On Molotov, the **"Live Channels"** side panel can stay open and trigger a known bug: **clicking on a channel does nothing**. This plugin automatically closes the panel **45 seconds after it opens**, forcing the channel list to reload and preventing this bug.
 
-**Comportement intelligent :**
-- ⏱️ Le décompte ne démarre **que quand l'onglet s'ouvre** (pas en permanence)
-- 🔄 Si vous fermez l'onglet manuellement, le timer s'annule
-- 🔓 Si vous rouvrez l'onglet, le timer repart à zéro
+**Smart behaviour:**
+- ⏱️ The countdown only starts **when the panel opens** (not permanently)
+- 🔄 If you close the panel manually, the timer is cancelled
+- 🔓 If you reopen the panel, the timer restarts from zero
 
-### ⬇️ Télécharger / Installer directement
+### ⬇️ Download / Install directly
 
-**URL du script** (pour import direct dans Tampermonkey) :
+**Script URL** (for direct import into Tampermonkey):
 ```
 https://raw.githubusercontent.com/pzim-devdata/plugins-for-molotov.tv/main/Molotov%20-%20Auto%20fermeture%20onglet%20cha%C3%AEnes.user.js
 ```
 
-### 📄 Code source
+### 📄 Source code
 
 <details>
-<summary>Cliquer pour afficher le script complet</summary>
+<summary>Click to show the full script</summary>
 
 ```javascript
 // ==UserScript==
@@ -227,7 +223,7 @@ https://raw.githubusercontent.com/pzim-devdata/plugins-for-molotov.tv/main/Molot
 
     // ===== SECTION #1_CONFIGURATION =====
     const CONFIG = {
-        delai_fermeture: 45000, // 45 secondes
+        delai_fermeture: 45000,
         debug: true
     };
 
@@ -283,7 +279,6 @@ https://raw.githubusercontent.com/pzim-devdata/plugins-for-molotov.tv/main/Molot
     function demarrerTimer() {
         annulerTimer();
         timerFermeture = setTimeout(() => {
-            log(`Expiration du délai (${CONFIG.delai_fermeture}ms)`);
             fermerOnglet();
             timerFermeture = null;
         }, CONFIG.delai_fermeture);
@@ -340,37 +335,37 @@ https://raw.githubusercontent.com/pzim-devdata/plugins-for-molotov.tv/main/Molot
 
 ---
 
-## 📥 Installation pas à pas
+## 📥 Step-by-step installation
 
-### Méthode 1 — Import par URL ⭐ (recommandée)
+### Method 1 — Import by URL ⭐ (recommended)
 
-1. Ouvrez l'extension **Tampermonkey** dans votre navigateur
-2. Cliquez sur l'onglet **Utilities**
-3. Dans la section **Import from URL**, collez l'URL du script souhaité
-4. Cliquez sur **Import**
-5. Tampermonkey affiche le script → cliquez sur **Install**
+1. Open the **Tampermonkey** extension in your browser
+2. Click on the **Utilities** tab
+3. In the **Import from URL** section, paste the script URL
+4. Click **Import**
+5. Tampermonkey shows the script → click **Install**
 
-### Méthode 2 — Import par fichier
+### Method 2 — Import from file
 
-1. Téléchargez le fichier `.user.js` depuis ce dépôt
-2. Ouvrez l'extension **Tampermonkey**
-3. Cliquez sur l'onglet **Utilities**
-4. Dans la section **Import from file**, sélectionnez le fichier téléchargé
-5. Cliquez sur **Install**
+1. Download the `.user.js` file from this repository
+2. Open the **Tampermonkey** extension
+3. Click on the **Utilities** tab
+4. In the **Import from file** section, select the downloaded file
+5. Click **Install**
 
-### Méthode 3 — Copier/Coller
+### Method 3 — Copy/Paste
 
-1. Copiez le code du script souhaité (voir sections ci-dessus)
-2. Ouvrez l'extension **Tampermonkey**
-3. Cliquez sur **+** pour créer un nouveau script
-4. Effacez le contenu par défaut et collez le code copié
-5. Appuyez sur **Ctrl+S** pour sauvegarder
+1. Copy the script code (see sections above)
+2. Open the **Tampermonkey** extension
+3. Click **+** to create a new script
+4. Clear the default content and paste the code
+5. Press **Ctrl+S** to save
 
 ---
 
-## 📜 Licence
+## 📜 License
 
-Ce projet est sous licence **MIT** — voir le fichier [LICENSE](LICENSE) pour plus de détails.
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
 ---
 
