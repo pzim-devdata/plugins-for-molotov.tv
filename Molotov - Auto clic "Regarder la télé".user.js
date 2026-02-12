@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Molotov - Auto clic "Regarder la télé" SIMPLE
+// @name         Molotov - Auto clic "Regarder la télé"
 // @namespace    http://tampermonkey.net/
 // @version      1.0
 // @description  Clique automatiquement sur "Regarder la télé" une seule fois par session
