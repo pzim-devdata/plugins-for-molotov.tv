@@ -10,6 +10,10 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Firefox-Tampermonkey-orange?logo=firefox&logoColor=white" alt="Firefox"/>
   <img src="https://img.shields.io/badge/Chrome-Tampermonkey-4285F4?logo=googlechrome&logoColor=white" alt="Chrome"/>
+  <img src="https://img.shields.io/badge/Edge-Tampermonkey-0078D4?logo=microsoftedge&logoColor=white" alt="Edge"/>
+  <img src="https://img.shields.io/badge/Safari-Tampermonkey-000000?logo=safari&logoColor=white" alt="Safari"/>
+  <img src="https://img.shields.io/badge/Opera-Tampermonkey-FF1B2D?logo=opera&logoColor=white" alt="Opera"/>
+  <br/>
   <img src="https://img.shields.io/github/commit-activity/t/pzim-devdata/plugins-for-molotov.tv" alt="Commits"/>
   <img src="https://img.shields.io/github/issues/pzim-devdata/plugins-for-molotov.tv" alt="Issues"/>
   <img src="https://visitor-badge.laobi.icu/badge?page_id=pzim-devdata.plugins-for-molotov.tv" alt="Visitors"/>
@@ -17,6 +21,19 @@
 </p>
 
 > ⚠️ **This project is independent and is not affiliated with, associated with, authorized by, or officially connected to Molotov.tv or its parent companies.**
+
+---
+
+## 📁 Repository contents
+
+| File | Description |
+|---|---|
+| [`Molotov - Auto clic "Regarder la télé".user.js`](Molotov%20-%20Auto%20clic%20%22Regarder%20la%20t%C3%A9l%C3%A9%22.user.js) | Tampermonkey script — auto-click "Watch TV" button |
+| [`Molotov - Auto fermeture onglet chaînes.user.js`](Molotov%20-%20Auto%20fermeture%20onglet%20cha%C3%AEnes.user.js) | Tampermonkey script — auto-close channels panel |
+| [`Auto clic "Regarder la télé".gif`](Auto%20clic%20%22Regarder%20la%20t%C3%A9l%C3%A9%22.gif) | Demo of the auto-click plugin |
+| [`Auto fermeture onglet chaînes.gif`](Auto%20fermeture%20onglet%20cha%C3%AEnes.gif) | Demo of the auto-close plugin |
+| [`molotov-banniere.png`](molotov-banniere.png) | Project banner |
+| [`LICENSE`](LICENSE) | MIT License |
 
 ---
 
@@ -34,16 +51,35 @@
 
 These plugins require the **Tampermonkey** browser extension.
 
-<table>
+<p align="center">
+  <img src="https://lh3.googleusercontent.com/zoY8FwoOqPlBgFxcmFdNSK2Q4CcLmv-gw7vTjF2KMR9cEabwBsGNrHBTEMitn0Ba6OmCVJ0NcLnFGu3N97BP8Phu0g=s120" alt="Tampermonkey" width="80"/>
+</p>
+
+<table align="center">
   <tr>
-    <td align="center" width="50%">
+    <td align="center">
       <a href="https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/">
-        <img src="https://img.shields.io/badge/Firefox-Install_Tampermonkey-FF7139?style=for-the-badge&logo=firefox-browser&logoColor=white" alt="Tampermonkey Firefox"/>
+        <img src="https://img.shields.io/badge/Firefox-Install-FF7139?style=for-the-badge&logo=firefox-browser&logoColor=white"/>
       </a>
     </td>
-    <td align="center" width="50%">
-      <a href="https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo">
-        <img src="https://img.shields.io/badge/Chrome-Install_Tampermonkey-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Tampermonkey Chrome"/>
+    <td align="center">
+      <a href="https://chromewebstore.google.com/detail/dhdgffkkebhmkfjojejmpbldmpobfkfo">
+        <img src="https://img.shields.io/badge/Chrome-Install-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://microsoftedge.microsoft.com/addons/detail/iikmkjmpaadaobahmlepeloendndfphd">
+        <img src="https://img.shields.io/badge/Edge-Install-0078D4?style=for-the-badge&logo=microsoftedge&logoColor=white"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://apps.apple.com/app/tampermonkey/id6738342400">
+        <img src="https://img.shields.io/badge/Safari-Install-000000?style=for-the-badge&logo=safari&logoColor=white"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://addons.opera.com/en/extensions/details/tampermonkey-beta/">
+        <img src="https://img.shields.io/badge/Opera-Install-FF1B2D?style=for-the-badge&logo=opera&logoColor=white"/>
       </a>
     </td>
   </tr>
@@ -55,7 +91,11 @@ These plugins require the **Tampermonkey** browser extension.
 
 ### Description
 
-When you open [app.molotov.tv](https://app.molotov.tv), a **"Watch TV"** button appears on the home page. This plugin automatically clicks it **once per session**, taking you directly to the player without any manual action.
+When you open [app.molotov.tv](https://app.molotov.tv), a **"Watch TV"** button appears on the home page before you can access the player. This plugin automatically clicks it **once per session**, taking you directly to the player without any manual action.
+
+<p align="center">
+  <img src="Auto clic &quot;Regarder la télé&quot;.gif" alt="Auto-click demo" width="80%"/>
+</p>
 
 ### ⬇️ Download / Install directly
 
@@ -64,10 +104,39 @@ When you open [app.molotov.tv](https://app.molotov.tv), a **"Watch TV"** button 
 https://raw.githubusercontent.com/pzim-devdata/plugins-for-molotov.tv/main/Molotov%20-%20Auto%20clic%20%22Regarder%20la%20t%C3%A9l%C3%A9%22.user.js
 ```
 
+### ⚙️ Configuration and parameters
+
+You can customize the plugin behaviour by editing the `CONFIG` section at the top of the script:
+
+```javascript
+const CONFIG = {
+    delai_verification: 1000,      // Delay (ms) before first button search after page load
+                                   // Increase if your page loads slowly (e.g. 2000 for 2s)
+
+    delai_avant_clic: 1000,        // Delay (ms) after finding the button, before clicking
+                                   // Allows the page to stabilise before the action
+
+    max_tentatives: 20,            // Maximum number of attempts to find the button
+                                   // If the button is not on the page, the script gives up after this count
+
+    intervalle_tentatives: 500,    // Delay (ms) between each search attempt
+                                   // Lower for faster reaction, higher to reduce resource usage
+
+    debug: true                    // Shows logs in the browser console (F12 → Console)
+                                   // Set to false to disable debug messages
+};
+```
+
+> 💡 **Example:** If your connection is slow, set `delai_verification` to `2000` and `delai_avant_clic` to `1500`.
+
+### 🔍 How it works
+
+The script uses `sessionStorage` to remember that it has already clicked during the current session. This means that if you navigate to other Molotov pages and return to the home page, the auto-click will not fire again — avoiding any intrusive behaviour. The session resets each time you close your browser.
+
 ### 📄 Source code
 
 <details>
-<summary>Click to show the full script</summary>
+<summary>👁️ Click to show the full script</summary>
 
 ```javascript
 // ==UserScript==
@@ -185,12 +254,16 @@ https://raw.githubusercontent.com/pzim-devdata/plugins-for-molotov.tv/main/Molot
 
 ### Description
 
-On Molotov, the **"Live Channels"** side panel can stay open and trigger a known bug: **clicking on a channel does nothing**. This plugin automatically closes the panel **45 seconds after it opens**, forcing the channel list to reload and preventing this bug.
+On Molotov, the **"Live Channels"** side panel can stay open and trigger a known bug: **clicking on a channel does nothing**. This bug occurs because the channel list is not reloaded. This plugin automatically closes the panel **45 seconds after it opens**, forcing the channel list to reload and eliminating this bug.
 
 **Smart behaviour:**
-- ⏱️ The countdown only starts **when the panel opens** (not permanently)
-- 🔄 If you close the panel manually, the timer is cancelled
+- ⏱️ The countdown only starts **when the panel opens** — no unwanted closing if you never opened it
+- 🔄 If you close the panel manually before 45s, the timer is cancelled
 - 🔓 If you reopen the panel, the timer restarts from zero
+
+<p align="center">
+  <img src="Auto fermeture onglet chaînes.gif" alt="Auto-close demo" width="80%"/>
+</p>
 
 ### ⬇️ Download / Install directly
 
@@ -199,10 +272,33 @@ On Molotov, the **"Live Channels"** side panel can stay open and trigger a known
 https://raw.githubusercontent.com/pzim-devdata/plugins-for-molotov.tv/main/Molotov%20-%20Auto%20fermeture%20onglet%20cha%C3%AEnes.user.js
 ```
 
+### ⚙️ Configuration and parameters
+
+You can customize the plugin behaviour by editing the `CONFIG` section at the top of the script:
+
+```javascript
+const CONFIG = {
+    delai_fermeture: 45000,   // Duration (ms) before auto-close after panel opens
+                              // 45000 = 45 seconds. Examples: 30000 (30s), 60000 (1 minute)
+
+    debug: true               // Shows logs in the browser console (F12 → Console)
+                              // 🔓 Panel OPEN detected → timer started
+                              // 🔒 Panel CLOSED detected → timer cancelled
+                              // ⏱️ Timer started: closing in Xs
+                              // Set to false to disable
+};
+```
+
+> 💡 **Example:** For a faster close, set `delai_fermeture` to `30000` (30 seconds).
+
+### 🔍 How it works
+
+The script uses a `MutationObserver` — a native browser API that watches DOM changes in real time. As soon as the channels panel appears in the page (detected by the CSS class `.oFGWl.mAcI4`), a `setTimeout` is triggered. If the panel disappears before expiry (manual close), the timer is cancelled via `clearTimeout`. This approach is far more efficient than a permanent `setInterval` polling loop, which could close the panel at the wrong moment.
+
 ### 📄 Source code
 
 <details>
-<summary>Click to show the full script</summary>
+<summary>👁️ Click to show the full script</summary>
 
 ```javascript
 // ==UserScript==
@@ -221,13 +317,11 @@ https://raw.githubusercontent.com/pzim-devdata/plugins-for-molotov.tv/main/Molot
 (function() {
     'use strict';
 
-    // ===== SECTION #1_CONFIGURATION =====
     const CONFIG = {
         delai_fermeture: 45000,
         debug: true
     };
 
-    // ===== SECTION #2_SELECTEURS =====
     const SELECTEUR_PANNEAU = '.oFGWl.mAcI4';
     const SELECTEURS_BOUTON_POSSIBLES = [
         '[data-test="player-remote-btn"]',
@@ -236,11 +330,9 @@ https://raw.githubusercontent.com/pzim-devdata/plugins-for-molotov.tv/main/Molot
         'div[data-test="player-remote-btn"]'
     ];
 
-    // ===== SECTION #3_VARIABLES_GLOBALES =====
     let timerFermeture = null;
     let observer = null;
 
-    // ===== SECTION #4_FONCTIONS_UTILITAIRES =====
     function log(message) {
         if (CONFIG.debug) { console.log(`[Molotov Auto] ${message}`); }
     }
@@ -260,49 +352,30 @@ https://raw.githubusercontent.com/pzim-devdata/plugins-for-molotov.tv/main/Molot
     function fermerOnglet() {
         if (!ongletEstOuvert()) { log('Onglet déjà fermé'); return; }
         const bouton = trouverBouton();
-        if (bouton) {
-            bouton.click();
-            log('✓ Onglet fermé automatiquement');
-        } else {
-            log('✗ Bouton non trouvé');
-        }
+        if (bouton) { bouton.click(); log('✓ Onglet fermé automatiquement'); }
+        else { log('✗ Bouton non trouvé'); }
     }
 
     function annulerTimer() {
-        if (timerFermeture) {
-            clearTimeout(timerFermeture);
-            timerFermeture = null;
-            log('Timer annulé');
-        }
+        if (timerFermeture) { clearTimeout(timerFermeture); timerFermeture = null; log('Timer annulé'); }
     }
 
     function demarrerTimer() {
         annulerTimer();
-        timerFermeture = setTimeout(() => {
-            fermerOnglet();
-            timerFermeture = null;
-        }, CONFIG.delai_fermeture);
+        timerFermeture = setTimeout(() => { fermerOnglet(); timerFermeture = null; }, CONFIG.delai_fermeture);
         log(`⏱️ Timer démarré : fermeture dans ${CONFIG.delai_fermeture / 1000}s`);
     }
 
-    // ===== SECTION #5_GESTION_OUVERTURE_FERMETURE =====
     function gererChangementOnglet() {
-        if (ongletEstOuvert()) {
-            log('🔓 Onglet OUVERT détecté');
-            demarrerTimer();
-        } else {
-            log('🔒 Onglet FERMÉ détecté');
-            annulerTimer();
-        }
+        if (ongletEstOuvert()) { log('🔓 Onglet OUVERT détecté'); demarrerTimer(); }
+        else { log('🔒 Onglet FERMÉ détecté'); annulerTimer(); }
     }
 
-    // ===== SECTION #6_OBSERVATION_DOM =====
     function observerDOM() {
         observer = new MutationObserver((mutations) => {
             for (let mutation of mutations) {
                 if (mutation.addedNodes.length > 0 || mutation.removedNodes.length > 0) {
-                    gererChangementOnglet();
-                    break;
+                    gererChangementOnglet(); break;
                 }
             }
         });
@@ -310,15 +383,10 @@ https://raw.githubusercontent.com/pzim-devdata/plugins-for-molotov.tv/main/Molot
         log('👁️ Observation DOM démarrée');
     }
 
-    // ===== SECTION #7_INITIALISATION =====
     function initialiser() {
         log('=== Initialisation du script ===');
-        if (ongletEstOuvert()) {
-            log('État initial : onglet OUVERT');
-            demarrerTimer();
-        } else {
-            log('État initial : onglet FERMÉ');
-        }
+        if (ongletEstOuvert()) { log('État initial : onglet OUVERT'); demarrerTimer(); }
+        else { log('État initial : onglet FERMÉ'); }
         observerDOM();
     }
 
@@ -337,29 +405,31 @@ https://raw.githubusercontent.com/pzim-devdata/plugins-for-molotov.tv/main/Molot
 
 ## 📥 Step-by-step installation
 
-### Method 1 — Import by URL ⭐ (recommended)
+### Step 1 — Open Tampermonkey Dashboard
 
-1. Open the **Tampermonkey** extension in your browser
-2. Click on the **Utilities** tab
-3. In the **Import from URL** section, paste the script URL
-4. Click **Import**
-5. Tampermonkey shows the script → click **Install**
+1. Click the **Tampermonkey** icon <img src="https://lh3.googleusercontent.com/zoY8FwoOqPlBgFxcmFdNSK2Q4CcLmv-gw7vTjF2KMR9cEabwBsGNrHBTEMitn0Ba6OmCVJ0NcLnFGu3N97BP8Phu0g=s120" height="20"/> in your browser's extension bar
+2. Click **Dashboard** in the dropdown menu
 
-### Method 2 — Import from file
+### Method A — Import by URL ⭐ (recommended)
 
-1. Download the `.user.js` file from this repository
-2. Open the **Tampermonkey** extension
-3. Click on the **Utilities** tab
-4. In the **Import from file** section, select the downloaded file
-5. Click **Install**
+3. In the Dashboard, click the **Utilities** tab
+4. In the **Import from URL** section, paste the script URL
+5. Click **Import**
+6. Tampermonkey displays the script → click **Install**
 
-### Method 3 — Copy/Paste
+### Method B — Import from file
 
-1. Copy the script code (see sections above)
-2. Open the **Tampermonkey** extension
-3. Click **+** to create a new script
-4. Clear the default content and paste the code
-5. Press **Ctrl+S** to save
+3. Download the `.user.js` file from this repository
+4. In the Dashboard, click the **Utilities** tab
+5. In the **Import from file** section, select the downloaded file
+6. Click **Install**
+
+### Method C — Copy/Paste
+
+3. Copy the script code from the sections above
+4. In the Dashboard, click **+** to create a new script
+5. Clear the default content and paste the code
+6. Press **Ctrl+S** to save
 
 ---
 
