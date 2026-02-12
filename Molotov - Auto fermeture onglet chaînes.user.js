@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Molotov - Auto fermeture onglet chaînes (V1)
+// @name         Molotov - Auto fermeture onglet chaînes
 // @namespace    http://tampermonkey.net/
 // @version      1.0
 // @description  Ferme automatiquement l'onglet chaînes 45s après son OUVERTURE
